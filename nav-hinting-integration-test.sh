@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 echo
-echo "Usage: contextual-bandit-integration-test.sh"
-echo "run from harness/java-sdk or from the integration-test.sh"
-echo "Make sure to set export HARNESS_CA_CERT=/path/to/harness.pem!!! or all sending to Harness will fail."
+echo "Usage: urhn-integration-test.sh"
+echo "run from the harness/rest-server/examples or from the integration-test.sh"
+echo "export HARNESS_CLIENT_USER_ID and HARNESS_CLIENT_USER_SECRET before running against"
+echo "Harness with TLS and Auth"
 echo
 
 # several flags are passed in via export from the integration test, otherwise they are undefined
