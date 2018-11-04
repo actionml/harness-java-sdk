@@ -1,22 +1,36 @@
-# Java SDK API
+# Harness Java SDK
 
- - Supports all Server REST APIs for Events and Queries
- - packages JSON for REST call
- - implements SSL and auth
- - modeled after the PredictionIO Java SDK API where possible
- - written based on [http-akka client](http://doc.akka.io/docs/akka-http/current/java/http/introduction.html#http-client-api)
- - provides synchronous and async type APIs
- - requires Java 8
+This implements an SDK for use in the client side for Harness Events and Queries. The Administration part of the REST API is currently only implemented in the Python SDK for use in the CLI.
 
-## Building the Harness Java SDK
+# Requirements
 
-Using git pull the source for Harness.
+ - Java 8+
+ - Maven 3+
 
-    pull https://github.com/actionml/harness.git harness
+# Build From Source
 
-Examine `harness/java-sdk/src/main/java/QueryClientExample.java` and `harness/java-sdk/src/main/java/QueryClientExample.java` which have working examples for Contextual Bandit input events and queries.
+ - **Get the Source:** 
 
-Copy the source of the Java SDK to your own project starting at `harness/java-sdk/src` and build it and your application with the added dependencies listed in the pom.xml at `harness/java-sdk/pom.xml`
+    ```
+    git pull https://github.com/actionml/harness-java-sdk.git
+    ```
+ - **Build:** Navigate to the root of the source containing `pom.xml` and execute: 
+
+    ```
+    mvn clean install
+    ```
+    
+This will create the jar necessary to include in the client and also populate the `~/.m2` cache for use as a dependency when creating a client application, like the examples and integration tests.
+
+# Java SDK Features
+
+ - Supports all Harness Server REST APIs for Events and Queries
+ - Does **not** currently implement the Admin REST APIs, which are implemented in the Python SDK and used in the CLI
+ - Packages JSON for REST call
+ - Implements SSL and Auth
+ - Modeled after the PredictionIO Java SDK API where possible
+ - Based on [http-akka client](http://doc.akka.io/docs/akka-http/current/java/http/introduction.html#http-client-api)
+ - Synchronous and async client APIs
 
 ## Sending Events
 
